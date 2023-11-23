@@ -16,6 +16,12 @@ ohMyZsh:
 
 docker:
 
+docker_compose:
+	@echo "a59919699a" | sudo mkdir /usr/local/bin/docker-compose
+	@echo "a59919699a" | sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
+	sudo chmod +x /usr/local/bin/docker-compose && \
+	docker-compose -v
+	
 discord:
 	mkdir discord && \
 	cd discord && \
@@ -28,7 +34,16 @@ discord:
         sudo dpkg -i "$$DEB_FILE"; \
     fi
 
-	
+nvm:
+	wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash && \
+	make restart_terminal &&
+	nvm install 18.12;
 
+restart_terminal:
+	$(SHELL)
 
+nestjs:
+	-ToDo
 
+vite:
+	-ToDO
