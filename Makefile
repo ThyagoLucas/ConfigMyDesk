@@ -1,17 +1,17 @@
 install:
-
-instalations:
-	sh mkdir instalations \
-	cd instalations
+	
+	make dbeaver && \
+	make vscode && \
+	make ohMyZsh && \
 
 vscode:
-	@echo "SuaSenha" | sudo snap install code --classic
+	sudo snap install code --classic
 
 dbeaver:
-	@echo "SuaSenha" | sudo snap install dbeaver-ce
+	sudo snap install dbeaver-ce
 
 ohMyZsh:
-	@echo "SuaSenha" | sudo apt-get install zsh && \
+	sudo apt-get install zsh && \
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 docker:
@@ -47,11 +47,11 @@ discord:
 
 nvm:
 	wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash && \
-	make restart_terminal &&
+	make restart_terminal && \
 	nvm install 18.12;
 
 restart_terminal:
-	$(SHELL)
+	
 
 nestjs:
 	-ToDo
